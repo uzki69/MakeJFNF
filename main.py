@@ -32,7 +32,9 @@ def handleVideo(video: Path, out: Path, title: str, season: int, ep: int):
     
     name = f'{title} S{season:02}E{ep:02}.mkv'
 
-    os.symlink(video.root, Path.joinpath(out, name))
+    linkTo = Path.joinpath(out, name)
+
+    os.symlink(video.absolute(), linkTo.absolute())
 
 
 if __name__ == "__main__":
