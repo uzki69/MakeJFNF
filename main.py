@@ -1,6 +1,7 @@
 import os
 import argparse
 from pathlib import Path
+import sys
 
 def main():
 
@@ -27,14 +28,20 @@ def main():
             episode+=1
 
 def handleVideo(video: Path, out: Path, title: str, season: int, ep: int):
-    if not video.name.endswith(".mkv"):
+    if not video.name.endswith((".mkv", ".avi", ".mp4", ".webm", ".ts", ".ogg")):
+        print(f"video type not supported: {video.name}", file=sys.stderr)
         return
     
-    name = f'{title} S{season:02}E{ep:02}.mkv'
-
+    ext = video.name.split('.')[-1]
+    
+    name = f'{title} S{season:02}E{ep:02}.{ext}'
+    
     linkTo = Path.joinpath(out, name)
 
-    os.symlink(video.absolute(), linkTo.absolute())
+    try:
+        os.symlink(video.absolute(), linkTo.absolute())
+    except Exception as e:
+        print(f'error linking file: {e}', sys.stderr)
 
 
 if __name__ == "__main__":
