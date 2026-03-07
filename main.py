@@ -14,13 +14,14 @@ def main():
 
     filesToHandle: list[Path] = []
 
-    if type(args.input) is list and type(args.output) is str and type(args.title) is str and type(args.season) is int:
+    if isinstance(args.input, list) and isinstance(args.output, str) and isinstance(args.title, str) and isinstance(args.season, int):
         # append files to list
         for input_path in args.input:
-            for entity in Path(input_path).iterdir(): 
+            if not isinstance(input_path, str): continue
+
+            for entity in sorted(Path(input_path).iterdir()):
                 if entity.is_file():
                     filesToHandle.append(entity)
-        
         # create episodes
         episode = 1
         outpath = Path(args.output)
