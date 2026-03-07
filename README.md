@@ -15,3 +15,11 @@ output:
   ├── Series Name A S01E03.mkv
   └── Series Name A S01E04.mkv
   ```
+
+## How to use
+
+```
+$ python main.py -i "/path/to/series/season" "/output/path/seriesname" "series name"  1
+```
+
+for now the paths must be absolute paths
