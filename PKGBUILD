@@ -8,8 +8,8 @@ arch=('x86_64')
 license=('custom')
 depends=('python' 'coreutils')
 options=(!strip)
-source=("$pkgname-$pkgver.tar.gz::https://github.com/uzki69/MakeJFNF/releases/download/$pkgver/$pkgname-$pkgver")
-sha256sums=('37d1bec1547d736a437c06cbcfd3c499b755f4c91f6d9195a7e3d6a78ab75117')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/uzki69/MakeJFNF/releases/download/$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('f2981536ec03b250b779bf63a525de3df5bb2907783d437a7dc1f438c86628fa')
 
 package() {
 	install -D -m755 "${srcdir}/${pkgname}-${pkgver}/main.py" "${pkgdir}/usr/bin/jfnf"
