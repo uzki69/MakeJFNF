@@ -22,7 +22,7 @@ output:
 $ export in=/path/to/series
 $ export out=/output/path
 ## Series/season 1
-$ ./main.py -i "$out/some-random-bs-seasonssj1" "$out/seriesname" "series name"  1
+$ ./main.py -i "$in/some-random-bs-seasonssj1" "$out/seriesname" "series name"  1
 ## Series + extras that's together in IMDB 
-$ ./main.py -i "$out/season1" -i "$out/extras"  "$out/seriesname"  "series name" 1
+$ ./main.py -i "$in/season1" -i "$in/extras"  "$out/seriesname"  "series name" 1
 ```
