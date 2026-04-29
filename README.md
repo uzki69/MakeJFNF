@@ -1,4 +1,4 @@
-## This application makes links to videos for the jellyfin shows format
+## This application make links to videos for the jellyfin shows format
 
 ### Like:
 ```
@@ -16,10 +16,13 @@ output:
   └── Series Name A S01E04.mkv
   ```
 
-## How to use
+## How to use (Linux)
 
 ```
-$ python main.py -i "/path/to/series/season" "/output/path/seriesname" "series name"  1
+$ export in=/path/to/series
+$ export out=/output/path
+## Series/season 1
+$ ./main.py -i "$out/some-random-bs-seasonssj1" "$out/seriesname" "series name"  1
+## Series + extras that's together in IMDB 
+$ ./main.py -i "$out/season1" -i "$out/extras"  "$out/seriesname"  "series name" 1
 ```
-
-for now the paths must be absolute paths
