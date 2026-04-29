@@ -18,11 +18,24 @@ output:
 
 ## How to use (Linux)
 
-```
-$ export in=/path/to/series
-$ export out=/output/path
+```sh
+export in=/path/to/series
+export out=/output/path
+
 ## Series/season 1
-$ ./main.py -i "$in/some-random-bs-seasonssj1" "$out/seriesname" "series name"  1
+./main.py -i "$in/some-random-bs-seasonssj1" "$out/seriesname" "series name"  1
+
 ## Series + extras that's together in IMDB 
-$ ./main.py -i "$in/season1" -i "$in/extras"  "$out/seriesname"  "series name" 1
+./main.py -i "$in/season1" -i "$in/extras"  "$out/seriesname"  "series name" 1
+```
+
+## $Arch linux Install
+```sh
+yay make-jfnf
+```
+Or
+```sh
+git clone https://github.com/uzki69/MakeJFNF.git
+cd MakeJFNF
+makepkg -si
 ```
