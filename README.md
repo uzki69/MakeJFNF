@@ -29,7 +29,7 @@ export out=/output/path
 ./main.py -i "$in/season1" -i "$in/extras"  "$out/seriesname"  "series name" 1
 ```
 
-## $Arch linux Install
+## Arch Linux
 ```sh
 yay make-jfnf
 ```
